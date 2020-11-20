@@ -16,8 +16,8 @@
 
 function userPlay(){
 
-    userChoice = '';
-    options = ['rock', 'paper', 'scissor'];
+    let userChoice = '';
+    let options = ['rock', 'paper', 'scissor'];
 
     while (!options.includes(userChoice.toLowerCase())) {
         userChoice = prompt("Choose Rock/Paper/Scissor!");
@@ -28,7 +28,7 @@ function userPlay(){
 
 function computerPlay() {
 
-    computerChoice = Math.floor(Math.random() * 3) + 1;
+    let computerChoice = Math.floor(Math.random() * 3) + 1;
 
     if (computerChoice === 1) {
         return 'rock';
@@ -56,11 +56,13 @@ function playRound(player, computer){
 }
 
 function game(){
-    //round = 1;
-    //while (round < 6){
-    player = userPlay();
-    computer = computerPlay();
-    return playRound(player, computer);
-        //round++;
-    //}
+    let random = 0;
+    let player;
+    let computer;
+    for (random; random < 5; random++){
+        player = userPlay();
+        computer = computerPlay();
+        result = playRound(player, computer);
+        console.log(result);
+    }
 }
